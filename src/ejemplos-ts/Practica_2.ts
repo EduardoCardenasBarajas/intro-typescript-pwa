@@ -1,8 +1,9 @@
-class Resultado{
+
+class Operacion{
   a:number;
   b:number;
   c:number;
-  resultado:number;
+  resultado1:number;
   resultado2:number;
 
   Ingresenu(){
@@ -12,34 +13,25 @@ class Resultado{
 
       console.log('El numero de a es: ', +a,+b,+c);
 
+      this.Impresion(a,b,c);
+
 }
 
 
-Resultadoposi():void{
-      this.resultado=Math.pow(this.b,2)-(4*(this.a*this.c));
-      this.resultado=Math.sqrt(this.resultado);
-      this.resultado=(-(this.b))-(this.resultado);
-      let total=this.resultado/(2*this.a);
-    
-      console.log(`El resultado de x1 es: ${this.resultado}`);
-      console.log(total);
+Impresion(a,b,c):void{
+  //x1
+      this.resultado1=(-(b)-(Math.sqrt(Math.pow(b,2)-(4*(a*c)))));
+      this.resultado1=this.resultado1/(2*a);
+      console.log(`El resultado de x1 es: ${this.resultado1}`);
       
-  }
-
-Resultadonega():void{
-    this.resultado2=Math.pow(this.b,2)-(4*(this.a*this.c));
-    this.resultado2=Math.sqrt(this.resultado);
-    this.resultado2=(-(this.b))-(this.resultado);
-    let total=this.resultado2/(2*this.a);
-    
-
-    console.log(total);
-
+      //x2
+  this.resultado2=(-(b)+(Math.sqrt(Math.pow(b,2)-(4*(a*c)))));
+  this.resultado2=this.resultado2/(2*a);
     
     console.log(`El resultado de x2 es: ${this.resultado2}`);
   }
 
   
 }
-let calculara= new Resultado();
-calculara.Ingresenu();
+let res= new Operacion();
+res.Ingresenu();
